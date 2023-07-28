@@ -12,7 +12,7 @@
 
 //funcao principal
 function calcularImc(event) {
-    event.preventDefault()
+    // event.preventDefault()
 
     console.log("Funcionate!!!");
 
@@ -23,6 +23,7 @@ function calcularImc(event) {
     let classificacao = classificarImc(imc); 
 
     let usuarioAtualizado = organizarDados(dadosUsuario, imc, classificacao);
+
 
     cadastroUsuario(usuarioAtualizado);
 
@@ -153,4 +154,12 @@ function montarTabela(listaDeCadastrados) {
 
     tabela.innerHTML = template;
 
+}
+
+// passo 8 - limpar local storage
+
+function deletarRegistro() {
+    localStorage.removeItem("usuariosCadastrados")
+
+    window.location.reload();   	
 }
